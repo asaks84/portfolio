@@ -1,8 +1,25 @@
-body{ 
- background-image: url('../images/brazilmap.png');
- background-color: red;
- & div{
-  background-color: greenyellow;
-  color: white;
+section{ 
+ height: 100vh;
+
+ &:nth-child(2n){
+  background-color: red;
  }
+}
+div[data-spy="scroll"]{
+ position: relative;
+
+  & div{
+   height: 100vh;
+  }
+}
+main{
+ position: relative;
+}
+
+a:active{
+ color: red;
+}
+
+header{
+ position: absolute;
 }

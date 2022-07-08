@@ -6,12 +6,12 @@ module.exports = {
   mode: 'development',
   devtool: 'inline-source-map',
   entry: {
-    index: ['./src/assets/js/script.js'],
+    main: ['./src/assets/js/script.js'],
   },
 
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'assets/js/bundle.js',
+    filename: 'assets/js/[name].js',
     assetModuleFilename: 'assets/images/[name][ext][query]',
     clean: true,
   },
@@ -39,7 +39,7 @@ module.exports = {
 
   plugins: [
     new HtmlWebpackPlugin({
-      chunks: ['index'],
+      chunks: 'all',
       title: "~we don't talk about bruno~",
       filename: 'index.html',
       template: './src/index.html',
@@ -64,7 +64,7 @@ module.exports = {
         test: /\.scss$/i,
         use: [
           // 3. remove CSS from JS and save into an external file
-          { loader: MiniCssExtractPlugin.loader },
+          MiniCssExtractPlugin.loader,
           // 2. generate CSS into CommonJS
           'css-loader',
           // 1. tranpile SCSS into CSS
