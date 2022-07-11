@@ -5,6 +5,7 @@ section{
   background-color: red;
  }
 }
+
 div[data-spy="scroll"]{
  position: relative;
 
@@ -12,14 +13,29 @@ div[data-spy="scroll"]{
    height: 100vh;
   }
 }
-main{
- position: relative;
-}
 
 a:active{
  color: red;
 }
 
-header{
- position: absolute;
+#wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
 }
+
+header{
+ position: fixed;
+ left: 0;
+ top: 0;
+ height: 100vh;
+ width: 20%;
+ background-color: brown;
+ z-index: 10;
+}
+
+main{
+  position: relative;
+  background-color: green;
+  width: 80%;
+ }

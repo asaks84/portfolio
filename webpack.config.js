@@ -43,6 +43,7 @@ module.exports = {
       title: "~we don't talk about bruno~",
       filename: 'index.html',
       template: './src/index.html',
+      inject: 'body',
     }),
     new MiniCssExtractPlugin({
       filename: 'assets/css/[name].css',
