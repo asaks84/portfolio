@@ -14,12 +14,15 @@
 
 <link href="assets/css/vendors.css" rel="stylesheet"><link href="assets/css/main.css" rel="stylesheet"></head>
 
-<body>
+<body class="loading">
+  <div class="loader">
+    <i class="mdi mdi-loading mdi-spin mdi-2x"></i>
+  </div>
   <div id="wrapper">
 
     <header class="flex">
-      <i class="settings mdi mdi-engine"></i>
-      
+      <i class="settings mdi mdi-cog-outline"></i>
+
       <div id="displaylogo" class="flex">
         <div class="imglogo"></div>
         <div class="content">
@@ -31,6 +34,14 @@
 
       <div class="settings">
         <div>
+          <h4>Configurações</h4>
+          <div class="flex">
+            <h6>Cor do tema</h6>  
+            <label id="switch" class="switch">
+              <input type="checkbox" onchange="toggleTheme()" id="slider">
+              <span class="slider round"></span>
+          </label>
+          </div>
           
         </div>
 
@@ -39,7 +50,7 @@
       <nav id="mainnav">
         <ul class="nav">
 
-          <li class="nav-item active">
+          <li class="nav-item">
             <i class="mdi mdi-home-outline"></i>
             <a class="nav-link" href="#home">Inicio</a>
           </li>
@@ -62,7 +73,7 @@
       <div class="contact"></div>
     </header>
 
-    <main data-spy="scroll" data-target="#mainnav">
+    <main>
       <section id="home"></section>
       <section id="aboutme"></section>
       <section id="knowledge"></section>
