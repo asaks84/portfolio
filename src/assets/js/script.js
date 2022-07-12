@@ -1,6 +1,8 @@
 import 'animate.css';
 import 'reset-css';
 import '../css/style.scss';
+import '../css/menu.scss';
+
 import '@mdi/font/css/materialdesignicons.min.css';
 
 // group of functions to set a given theme/color-scheme
@@ -29,3 +31,42 @@ import '@mdi/font/css/materialdesignicons.min.css';
     document.getElementById('slider').checked = true;
   }
 })();
+
+// menu active link
+
+const menulinks = document.querySelectorAll('#mainnav a');
+const sections = document.querySelectorAll('section');
+
+function changeMenu() {
+  sections.forEach((e) => {
+    const top = window.scrollY;
+    const offset = e.offsetTop;
+    const height = e.offsetHeight;
+    const id = e.getAttribute('id');
+
+    if (top >= offset && top < offset + height) {
+      menulinks.forEach((item) => {
+        item.parentElement.classList.remove('active');
+        if (item.getAttribute('href') === `#${id}`) {
+          item.parentElement.classList.add('active');
+        }
+      });
+    }
+  });
+}
+
+function startLoader() {
+  const loader = document.querySelector('.loader');
+  loader.style.right = '0';
+
+  window.addEventListener('DOMContentLoaded', () => {
+    loader.style.opacity = '0';
+    setTimeout(() => {
+      loader.style.display = 'none';
+    }, 750);
+  });
+}
+startLoader();
+
+window.onscroll = () => changeMenu();
+window.onload = () => changeMenu();
