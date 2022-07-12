@@ -1,38 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
- <meta charset="UTF-8">
- <meta http-equiv="X-UA-Compatible" content="IE=edge">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>cauê carrera - portfolio</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>cauê carrera - portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300&family=Oswald:wght@300;400&display=swap"
+    rel="stylesheet">
+
 <link href="assets/css/vendors.css" rel="stylesheet"><link href="assets/css/main.css" rel="stylesheet"></head>
+
 <body>
   <div id="wrapper">
-    <header>
+
+    <header class="flex">
+      <i class="settings mdi mdi-engine"></i>
       
-      <div id="displaylogo"></div>
-      
+      <div id="displaylogo" class="flex">
+        <div class="imglogo"></div>
+        <div class="content">
+          <h2>.cauê carrera</h2>
+          <hr />
+          <h4>theac</h4>
+        </div>
+      </div>
+
+      <div class="settings">
+        <div>
+          
+        </div>
+
+      </div>
+
       <nav id="mainnav">
         <ul class="nav">
-          <li class="nav-item">
+
+          <li class="nav-item active">
+            <i class="mdi mdi-home-outline"></i>
             <a class="nav-link" href="#home">Inicio</a>
           </li>
           <li class="nav-item">
+            <i class="mdi mdi-account-circle-outline"></i>
             <a class="nav-link" href="#aboutme">Quem sou eu</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#knowledge">Tecnlogias conhecidas</a>
+            <i class="mdi mdi-bookshelf"></i>
+            <a class="nav-link" href="#knowledge">Conhecimento</a>
           </li>
           <li class="nav-item">
+            <i class="mdi mdi-folder-open-outline"></i>
             <a class="nav-link" href="#portfolio">Portfolio</a>
           </li>
+
         </ul>
       </nav>
 
       <div class="contact"></div>
-
     </header>
-    
+
     <main data-spy="scroll" data-target="#mainnav">
       <section id="home"></section>
       <section id="aboutme"></section>
@@ -43,4 +72,5 @@
     <footer></footer>
   </div>
 <script defer src="assets/js/main.js"></script></body>
+
 </html>
