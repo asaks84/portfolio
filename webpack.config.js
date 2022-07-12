@@ -69,7 +69,12 @@ module.exports = {
           // 2. generate CSS into CommonJS
           'css-loader',
           // 1. tranpile SCSS into CSS
-          'sass-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              implementation: require.resolve('sass'),
+            },
+          },
         ],
       },
       {

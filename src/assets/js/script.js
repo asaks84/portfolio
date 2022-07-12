@@ -1,7 +1,6 @@
 import 'animate.css';
 import 'reset-css';
 import '../css/style.scss';
-import '../css/menu.scss';
 
 import '@mdi/font/css/materialdesignicons.min.css';
 
@@ -67,6 +66,18 @@ function startLoader() {
   });
 }
 startLoader();
+
+// function clickChangeMenu(e) {
+//   console.log(e.target);
+//   for (let i = 0; i < menulinks.length; i += 1) {
+//     menulinks[i].parentElement.classList.remove('active');
+//     if (menulinks[i] === e.target) {
+//       menulinks[i].parentElement.classList.add('active');
+//     }
+//   }
+// }
+
+// menulinks.forEach((e) => e.addEventListener('click', clickChangeMenu));
 
 window.onscroll = () => changeMenu();
 window.onload = () => changeMenu();
