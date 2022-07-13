@@ -40,10 +40,10 @@ function changeMenu() {
   sections.forEach((e) => {
     const top = window.scrollY;
     const offset = e.offsetTop;
-    const height = e.offsetHeight;
     const id = e.getAttribute('id');
+    const headerheight = 50;
 
-    if (top >= offset && top < offset + height) {
+    if (top >= offset - headerheight) {
       menulinks.forEach((item) => {
         item.parentElement.classList.remove('active');
         if (item.getAttribute('href') === `#${id}`) {
