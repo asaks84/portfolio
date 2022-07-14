@@ -9,8 +9,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300&family=Oswald:wght@300;400&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300&family=Oswald:wght@300;400&family=Ubuntu:wght@300&display=swap" rel="stylesheet"> 
 
 <link href="assets/css/vendors.css" rel="stylesheet"><link href="assets/css/main.css" rel="stylesheet"></head>
 
@@ -21,7 +20,10 @@
   <div id="wrapper">
 
     <header class="flex">
-      <i class="settings mdi mdi-cog-outline"></i>
+      <div class="icon-settings">
+        <i class="settings mdi mdi-cog-outline"></i>
+      </div>
+      
 
       <div id="displaylogo" class="flex">
         <div class="imglogo"></div>
@@ -64,6 +66,10 @@
             <i class="mdi mdi-folder-open-outline"></i>
             <a class="nav-link" href="#portfolio">Portfolio</a>
           </li>
+          <li class="nav-item">
+            <i class="mdi mdi-folder-open-outline"></i>
+            <a class="nav-link" href="#contact">Contato</a>
+          </li>
 
         </ul>
       </nav>
@@ -72,10 +78,68 @@
     </header>
 
     <main>
-      <section id="home"></section>
-      <section id="aboutme"></section>
+
+      <section id="home" class="flex">
+        <div class="headline">
+          <h1>
+            <span class="bold">Oi,</span> eu sou o <span class="invert">Cauê.</span>
+            <br>
+            Sou desenvolvedor front-end
+          </h1>
+          <p>e eu tive um site!</p>
+        </div>
+        <div class="subtitle">
+
+        </div>
+      </section>
+
+      <section id="aboutme" class="flex">
+
+        <div>
+          <h1>Quem sou eu</h1>
+          <div class="flex">
+
+            <div class="firstblock">
+
+            </div>
+
+            <div class="secondblock flex">
+                <ul class="about-info">
+                  <li> <span>Nome:</span>
+                    <p>Cauê Carrera</p>
+                  </li>
+                  <li> <span>Contato:</span>
+                    <p>(13) 99758.0774</p>
+                  </li>
+                  <li> <span>Idade:</span>
+                    <p>37</p>
+                  </li>
+                  <li> <span>De:</span>
+                    <p>São Vicente</p>
+                  </li>
+                </ul>
+                <hr>
+                <h4>Eu sou um desenvolvedor front-end!</h4>
+                <p>
+                  Deixa eu te contar rapidamente sobre mim. Sempre fui entusiasta de tecnologia e 
+                  brinco com HTML/CSS desde 2002. Em 2022 resolvi transformar o que era um passatempo 
+                  em profissão.
+                </p>
+                <p>
+                  Comecei os estudos de desenvolvimento web em março, iniciando por JavaScript e React.
+                </p>
+                <p>
+                  Pretendo aprofundar meus estudos passando pro back-end com node e ter um conhecimento Full-Stack.
+                </p>
+             </div>
+             
+          </div>
+        </div>
+      </section>
+
       <section id="knowledge"></section>
       <section id="portfolio"></section>
+      <section id="contact"></section>
     </main>
 
     <footer></footer>
