@@ -3,6 +3,8 @@
 @import "./roots.scss";
 @import "menu.scss";
 
+*{ box-sizing: border-box; }
+
 html {
   scroll-behavior: smooth;
 }
@@ -94,12 +96,21 @@ p {
   display: flex;
   width: 100%;
   justify-content: flex-end;
+
+  @include responsive(tablet){
+    flex-direction: column;
+  }
+  
 }
 
 main {
   position: relative;
   width: var(--main-witdth);
   background-color: var(--background-color);
+
+  @include responsive(tablet){
+    width: 100%;
+  }
 }
 
 // SECTIONS
@@ -117,7 +128,11 @@ section p:not(:last-child) {
 
 section:not(#home) {
   & > div {
-    margin: 25px;
+    padding: 25px;
+    
+    @include responsive(tablet){
+      padding-top: calc(15px + 65px);
+    }
 
     & > h1 {
       margin: 0 0 2rem 0;
@@ -203,6 +218,7 @@ section#aboutme {
   & .container {
     gap: 10px;
     justify-content: space-around;
+    flex-wrap: wrap;
   }
 
   & .firstblock {
@@ -210,12 +226,16 @@ section#aboutme {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    flex-wrap: wrap;
+
+    @include responsive(tablet){
+      width: 100%;
+    }
 
     & .profile {
-      max-width: 100%;
-      max-height: 100%;
+      width: 100%;
+      height: 100%;
       height: auto;
+      min-width: 323px;
     }
   }
 
@@ -224,6 +244,10 @@ section#aboutme {
     flex-direction: column;
     justify-content: center;
     text-align: justify;
+    
+    @include responsive(tablet){
+      width: 100%;
+    }
   }
 
   & .about-info {
@@ -267,9 +291,15 @@ section#aboutme {
     }
   }
 }
-#knowledge {
-  background-color: var(--background-color);
-  color: var(--text-color);
+section#knowledge {
+  background-color: var(--background-color2);
+  color: var(--text-color2);
+
+  & > div > h1 {
+    &::after {
+      background: var(--text-color2);
+    }
+  }
 }
 #contact {
   height: 100vh;

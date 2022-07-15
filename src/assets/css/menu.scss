@@ -3,6 +3,7 @@
 header {
   font-family: 'Dosis', sans-serif;
   flex-direction: column;
+  flex-wrap: wrap;
   position: fixed;
   align-items: center;
   gap: 3rem;
@@ -13,6 +14,12 @@ header {
   background-color: var(--nav-background);
   box-shadow: var(--box-shadow);
   z-index: 1;
+
+  @include responsive(tablet){
+    width: 100%;
+    height: 65px;
+    justify-content: center;
+  }
 
   &::before {
     content: "";
@@ -44,13 +51,14 @@ header {
 
   & > div.settings {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     position: absolute;
     top: 0;
     text-align: center;
     opacity: 1;
-    color: var(--settings-color);
     visibility: hidden;
+    color: var(--settings-color);
+    
     z-index: 10;
 
     &::before {
@@ -77,6 +85,12 @@ header {
       }
     }
   }
+
+  & .contact{
+    @include responsive(tablet){
+      display: none;
+    }
+  }
 }
 
 // Logo
@@ -86,6 +100,9 @@ header {
   width: 200px;
   height: 65px;
   justify-content: space-between;
+  @include responsive(tablet){
+    margin: 0;
+  }
 
   & .imglogo {
     width: 59px;
@@ -118,6 +135,7 @@ header {
     font-family: 'Oswald', sans-serif;
     text-align: right;
     letter-spacing: 0.8px;
+    margin: 0;
   }
 }
 
@@ -127,6 +145,10 @@ header {
   $marginnav: 0.5rem;
   $transitiontime: 200ms;
   background-color: var(--background-color);
+
+  @include responsive(tablet){
+    display: none;
+  }
   & li {
     font-size: 1.15rem;
     border: {
