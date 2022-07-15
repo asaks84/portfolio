@@ -9,7 +9,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300&family=Oswald:wght@300;400&family=Ubuntu:wght@300&display=swap" rel="stylesheet"> 
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300&family=Oswald:wght@300;400&family=Ubuntu:wght@300&display=swap"
+    rel="stylesheet">
 
 <link href="assets/css/vendors.css" rel="stylesheet"><link href="assets/css/main.css" rel="stylesheet"></head>
 
@@ -23,7 +25,7 @@
       <div class="icon-settings">
         <i class="settings mdi mdi-cog-outline"></i>
       </div>
-      
+
 
       <div id="displaylogo" class="flex">
         <div class="imglogo"></div>
@@ -60,7 +62,7 @@
           </li>
           <li class="nav-item">
             <i class="mdi mdi-bookshelf"></i>
-            <a class="nav-link" href="#knowledge">Conhecimento</a>
+            <a class="nav-link" href="#knowledge">Conhecimentos</a>
           </li>
           <li class="nav-item">
             <i class="mdi mdi-folder-open-outline"></i>
@@ -88,6 +90,7 @@
           </h1>
           <p>e eu tive um site!</p>
         </div>
+        <a href="#aboutme" class="btn">Segue o fio</a>
         <div class="subtitle">
 
         </div>
@@ -97,53 +100,68 @@
 
         <div>
           <h1>Quem sou eu</h1>
-          <div class="flex">
+          <div class="container flex">
 
-            <div class="firstblock">
-
+            <div class="firstblock flex">
+              <div>
+                <img class="profile" src="./assets/images/dev.png" alt="">
+              </div>
+              <hr>
+              <ul class="about-info">
+                <li>
+                  <span>Nome:</span>
+                  <p>Cauê Carrera</p>
+                </li>
+                <li>
+                  <span>Contato:</span>
+                  <p>(13) 99758.0774</p>
+                </li>
+                <li>
+                  <span>Idade:</span>
+                  <p>37</p>
+                </li>
+                <li>
+                  <span>De:</span>
+                  <p>São Vicente</p>
+                </li>
+              </ul>
             </div>
 
             <div class="secondblock flex">
-                <ul class="about-info">
-                  <li> <span>Nome:</span>
-                    <p>Cauê Carrera</p>
-                  </li>
-                  <li> <span>Contato:</span>
-                    <p>(13) 99758.0774</p>
-                  </li>
-                  <li> <span>Idade:</span>
-                    <p>37</p>
-                  </li>
-                  <li> <span>De:</span>
-                    <p>São Vicente</p>
-                  </li>
-                </ul>
-                <hr>
-                <h4>Eu sou um desenvolvedor front-end!</h4>
-                <p>
-                  Deixa eu te contar rapidamente sobre mim. Sempre fui entusiasta de tecnologia e 
-                  brinco com HTML/CSS desde 2002. Em 2022 resolvi transformar o que era um passatempo 
-                  em profissão.
-                </p>
-                <p>
-                  Comecei os estudos de desenvolvimento web em março, iniciando por JavaScript e React.
-                </p>
-                <p>
-                  Pretendo aprofundar meus estudos passando pro back-end com node e ter um conhecimento Full-Stack.
-                </p>
-             </div>
-             
+              <p>
+                Deixa eu te contar rapidamente sobre mim. Sempre fui entusiasta de tecnologia e
+                brinco com HTML/CSS desde 2002. Em 2022 resolvi transformar o que era um passatempo
+                em profissão.
+              </p>
+              <p>
+                Comecei os estudos de desenvolvimento web em Março, iniciando por JavaScript
+                e aprofundando mais em tags semânticas, estilos e preprocessadores.
+              </p>
+              <p>
+                Pretendo aprofundar meus estudos passando pro back-end com node e ter um conhecimento Full-Stack.
+              </p>
+            </div>
+
+          </div>
+        </div>
+        <a href="#knowledge" class="btn btn2">Olha o que eu sei</a>
+      </section>
+
+      <section id="knowledge" class="flex">
+        <div>
+          <h1>Conhecimentos</h1>
+          <div class="container flex">
           </div>
         </div>
       </section>
-
-      <section id="knowledge"></section>
       <section id="portfolio"></section>
       <section id="contact"></section>
     </main>
 
-    <footer></footer>
   </div>
+  <footer>
+
+  </footer>
 <script defer src="assets/js/main.js"></script></body>
 
 </html>
