@@ -1,6 +1,7 @@
 import 'animate.css';
 import 'reset-css';
 import '../css/style.scss';
+import '../images/dev.png';
 
 import '@mdi/font/css/materialdesignicons.min.css';
 

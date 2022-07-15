@@ -126,7 +126,7 @@ header {
 #mainnav {
   $marginnav: 0.5rem;
   $transitiontime: 200ms;
-
+  background-color: var(--background-color);
   & li {
     font-size: 1.15rem;
     border: {
