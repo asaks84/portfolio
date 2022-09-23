@@ -129,6 +129,7 @@ section p:not(:last-child) {
 section:not(#home) {
   & > div {
     padding: 25px;
+    width: 100%;
     
     @include responsive(tablet){
       padding-top: calc(15px + 65px);
