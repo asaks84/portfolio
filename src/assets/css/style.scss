@@ -21,6 +21,9 @@ body {
 
 // Utilities
 
+a, a:visited{
+  color: var(--text-color);
+}
 p {
   margin-bottom: 0.5rem;
 }
@@ -32,19 +35,19 @@ hr {
   background-color: var(--text-color2);
   width: 100%;
 }
-h1 {
+h1, h3, h4, h5, h6{
   font-family: "Dosis", sans-serif;
+}
+h1 {
   font-size: 3rem;
   margin: 0.3rem 0;
   line-height: 3.1rem;
 }
 h3 {
-  font-family: "Dosis", sans-serif;
   font-size: 1.6rem;
   line-height: 1.8rem;
 }
 h4 {
-  font-family: "Dosis", sans-serif;
   font-size: 1rem;
   margin: 0.8rem 0;
   font-weight: bold;
@@ -122,9 +125,32 @@ main {
   margin-left: auto;
 }
 
+section {
+  & .btn {
+    margin: 1.5rem 0;
+
+    &::after {
+      display: inline-block;
+      content: "\F035F";
+      font-family: "Material Design Icons";
+      margin-left: 0.5rem;
+      transition: all linear 200ms;
+    }
+
+    &:hover {
+      &::after {
+        transform: rotate(90deg);
+      }
+    }
+  }
+}
+
 section p:not(:last-child) {
   margin-bottom: 1rem;
 }
+
+
+// SPECFIC SECTIONS 
 
 section:not(#home) {
   & > div {
@@ -172,26 +198,30 @@ section:not(#home) {
       margin-right: 0.3rem;
     }
   }
+}
+section#portfolio{
+  flex-direction: column;
+  align-items: center;
+  & .containter{
+    flex-wrap: wrap;
+    justify-content: space-around;
 
-  & .btn {
-    margin: 0.6rem 0;
+    &>div{
+      width: 280px;
 
-    &::after {
-      display: inline-block;
-      content: "\F035F";
-      font-family: "Material Design Icons";
-      margin-left: 0.5rem;
-      transition: all linear 200ms;
-    }
-
-    &:hover {
-      &::after {
-        transform: rotate(90deg);
+      & .imgportfolio {
+        width: 280px;
+        height: 180px;
+      }
+      & h4 {
+        margin: .2rem;
+      }
+      & h6{
+        font-size: .9rem;
       }
     }
   }
 }
-
 section#aboutme {
   flex-direction: column;
   justify-content: center;
@@ -199,6 +229,8 @@ section#aboutme {
   background-color: var(--background-color2);
   color: var(--text-color2);
   // height: 100vh;
+
+  & a, a:visited{ color: var(--text-color2);}
 
   & > div > h1 {
     &::before {
@@ -270,24 +302,6 @@ section#aboutme {
       & p:last-child {
         margin-top: 0.3rem;
         margin-bottom: 1rem;
-      }
-    }
-  }
-
-  & .btn {
-    margin: 0 0 2rem 0;
-
-    &::after {
-      display: inline-block;
-      content: "\F035F";
-      font-family: "Material Design Icons";
-      margin-left: 0.5rem;
-      transition: all linear 200ms;
-    }
-
-    &:hover {
-      &::after {
-        transform: rotate(90deg);
       }
     }
   }
