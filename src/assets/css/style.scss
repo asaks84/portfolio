@@ -70,6 +70,22 @@ p {
 }
 
 .btn {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+
+    &::after {
+      display: inline-block;
+      content: "\F035F";
+      font-family: "Material Design Icons";
+      margin-left: 0.5rem;
+      transition: all linear 200ms;
+    }
+
+    &:hover {
+      &::after {
+        transform: rotate(90deg);
+      }
+    }
   box-shadow: var(--box-shadow);
   background-color: transparent;
   border: 1px solid var(--text-color);
@@ -106,6 +122,13 @@ p {
   
 }
 
+.container {
+  width: 100%;
+  max-width: 1140px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 main {
   position: relative;
   width: var(--main-witdth);
@@ -117,33 +140,6 @@ main {
 }
 
 // SECTIONS
-
-.container {
-  width: 100%;
-  max-width: 1140px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-section {
-  & .btn {
-    margin: 1.5rem 0;
-
-    &::after {
-      display: inline-block;
-      content: "\F035F";
-      font-family: "Material Design Icons";
-      margin-left: 0.5rem;
-      transition: all linear 200ms;
-    }
-
-    &:hover {
-      &::after {
-        transform: rotate(90deg);
-      }
-    }
-  }
-}
 
 section p:not(:last-child) {
   margin-bottom: 1rem;
@@ -198,6 +194,10 @@ section:not(#home) {
       margin-right: 0.3rem;
     }
   }
+
+  & .btn{
+    margin-top: 1.5rem;
+  }
 }
 section#portfolio{
   flex-direction: column;
@@ -205,6 +205,7 @@ section#portfolio{
   & .containter{
     flex-wrap: wrap;
     justify-content: space-around;
+    row-gap: 1rem;
 
     &>div{
       width: 280px;
@@ -218,6 +219,9 @@ section#portfolio{
       }
       & h6{
         font-size: .9rem;
+      }
+      & p{
+        margin-bottom: 0;
       }
     }
   }
