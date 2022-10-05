@@ -205,14 +205,18 @@ section:not(#home) {
 section#portfolio{
   flex-direction: column;
   align-items: center;
+  
   & .containter{
     flex-wrap: wrap;
     justify-content: space-around;
+    gap: .5rem;
     row-gap: 1rem;
 
     &>div{
       width: 280px;
       height: fit-content;
+      position: relative;
+      cursor: pointer;
 
       & .imgportfolio {
         width: 280px;
@@ -220,6 +224,19 @@ section#portfolio{
         border: 1px solid;
         border-color: var(--background-color2);
         box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+      }
+
+      & .description{
+        width: 280px;
+        height: 180px;
+        padding: 15px;
+        justify-content: center;
+        align-items: center;
+        background-color: #ffffffd2;
+        position: absolute;
+        top: 0;
+        left: 0;
+        visibility: hidden;
       }
       & h4 {
         margin: .2rem;
