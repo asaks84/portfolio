@@ -1,7 +1,10 @@
 @import "./slider.css";
-@import "mquery.scss";
+@import "./mediaQueries.scss";
+@import "./portfoliodisplay.scss";
 @import "./roots.scss";
 @import "menu.scss";
+
+
 
 *{ box-sizing: border-box; }
 
@@ -208,15 +211,15 @@ section#portfolio{
   
   & .container{
     flex-wrap: wrap;
-    justify-content: space-around;
-    gap: .5rem;
-    row-gap: 1rem;
+    justify-content: center;
 
     &>div{
-      width: 280px;
-      height: fit-content;
+      width: 350px;
+      height: 300px;
       position: relative;
       cursor: pointer;
+      border: 1px solid;
+      border-color: var(--background-color2);
 
       & h4 {
         margin: .2rem;
@@ -227,20 +230,14 @@ section#portfolio{
         margin-bottom: 0;
       }
 
-      & .imgportfolio {
-        width: 280px;
-        height: 180px;
-        border: 1px solid;
-        border-color: var(--background-color2);
-        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-      }
-
       & .description{
-        width: 280px;
-        height: 180px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        width: 350px;
+        height: 300px;
         padding: 15px;
-        justify-content: center;
         text-align: center;
+        flex-direction: column;
+        justify-content: space-around;
         align-items: center;
         background: var(--background-op-color) ;
         position: absolute;
@@ -248,6 +245,10 @@ section#portfolio{
         left: 0;
         opacity: 0;
         transition: opacity 300ms ease-out;
+
+        & .btn{
+          margin-bottom: 0;
+        }
       }
 
       &:hover{
@@ -256,6 +257,7 @@ section#portfolio{
         }
       }
     }
+    @include portfolio-items
   }
 }
 section#aboutme {
