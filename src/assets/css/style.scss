@@ -218,6 +218,15 @@ section#portfolio{
       position: relative;
       cursor: pointer;
 
+      & h4 {
+        margin: .2rem;
+      }
+      & a, a:visited{ text-decoration: none;}
+      & p{
+        margin-top: .5rem;
+        margin-bottom: 0;
+      }
+
       & .imgportfolio {
         width: 280px;
         height: 180px;
@@ -231,20 +240,20 @@ section#portfolio{
         height: 180px;
         padding: 15px;
         justify-content: center;
+        text-align: center;
         align-items: center;
-        background-color: #ffffffd2;
+        background: var(--background-op-color) ;
         position: absolute;
         top: 0;
         left: 0;
-        visibility: hidden;
+        opacity: 0;
+        transition: opacity 300ms ease-out;
       }
-      & h4 {
-        margin: .2rem;
-      }
-      & a, a:visited{ text-decoration: none;}
-      & p{
-        margin-top: .5rem;
-        margin-bottom: 0;
+
+      &:hover{
+        & .description{
+          opacity: 1;
+        }
       }
     }
   }
