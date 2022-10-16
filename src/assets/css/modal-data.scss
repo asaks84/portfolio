@@ -1,4 +1,6 @@
 .modal-wrap{
+  justify-content: center;
+  align-items: center;
   position: fixed;
   width: 100vw;
   height: 100vh;
@@ -7,15 +9,18 @@
   opacity: 0;
   z-index: 10;
   transition: opacity .3s;
-  justify-content: center;
-  align-items: top;
+
 
   &.visible { opacity: 1;}
 
   & > #modal{
+    top: -6vw;
+    position: relative;
+    margin-top: 2rem;
     width: 700px;
     min-height: 450px;
-    height: auto;
+    height: fit-content;
     background-color: #fff;
+    box-shadow: var(--box-shadow);
   }
 }
