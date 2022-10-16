@@ -1,0 +1,21 @@
+.modal-wrap{
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100%;
+  background-color: rgba(0, 0, 0, 0.15); 
+  opacity: 0;
+  z-index: 10;
+  transition: opacity .3s;
+  justify-content: center;
+  align-items: top;
+
+  &.visible { opacity: 1;}
+
+  & > #modal{
+    width: 700px;
+    min-height: 450px;
+    height: auto;
+    background-color: #fff;
+  }
+}

@@ -3,6 +3,7 @@
 @import "./portfoliodisplay.scss";
 @import "./roots.scss";
 @import "menu.scss";
+@import "./modal-data.scss";
 
 
 
@@ -195,6 +196,13 @@ section:not(#home) {
 
   & .headline {
     position: relative;
+    padding: 1rem;
+
+    @include responsive(phone){
+      & h1{
+        text-align: center;
+      }
+    }
     & p {
       text-align: right;
       margin-right: 0.3rem;
@@ -243,6 +251,7 @@ section#portfolio{
         left: 0;
         opacity: 0;
         transition: opacity 300ms ease-out;
+        z-index: 1;
 
         & .btn{
           margin-bottom: 0;
