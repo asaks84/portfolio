@@ -8,6 +8,7 @@
 @import "./util.scss";
 
 
+
 // Content
 
 #wrapper {
@@ -106,6 +107,8 @@ section:not(#home) {
   }
 }
 section#portfolio{
+  $displayWidth: 330px;
+
   flex-direction: column;
   align-items: center;
   
@@ -114,7 +117,7 @@ section#portfolio{
     justify-content: center;
 
     &>div{
-      width: 330px;
+      width: $displayWidth;
       height: 300px;
       position: relative;
       cursor: pointer;
@@ -130,7 +133,7 @@ section#portfolio{
 
       & .description{
         box-shadow: var(--box-shadow);
-        width: 350px;
+        width: $displayWidth;
         height: 300px;
         padding: 15px;
         text-align: center;
@@ -276,7 +279,7 @@ section#knowledge {
 }
 
 .loader {
-  transition: 0.3s ease-in-out;
+  transition: opacity .3s ease-in-out;
   background-color: white;
   left: 0;
   width: 100%;

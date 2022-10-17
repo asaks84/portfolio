@@ -6,7 +6,10 @@ module.exports = {
   mode: 'development',
   devtool: 'inline-source-map',
   entry: {
-    main: ['./src/assets/js/script.js'],
+    main: [
+      './src/assets/js/script.js',
+      './src/assets/js/modal.js',
+    ],
   },
 
   output: {

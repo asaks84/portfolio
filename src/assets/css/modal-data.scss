@@ -4,6 +4,10 @@ $window-height: 450px;
   transition: all .7s;
 }
 
+.displayNone{
+  display: none !important;
+}
+
 .modal-wrap {
   justify-content: center;
   align-items: center;
@@ -41,13 +45,12 @@ $window-height: 450px;
 
   // IMAGE CAROUSEL CONTROLLER
 
-
-  .window {
-    & i {
+    i {
       font-size: 60px;
       position: absolute;
       opacity: .3;
       bottom: calc(50% - 30px);
+      cursor: pointer;
       
       &.right {
         right: 0;
@@ -55,19 +58,19 @@ $window-height: 450px;
       &.left {
         left: 0;
       }
+      
+      &.close {
+        position: absolute;
+        top: -1.5rem;
+        right: .5rem;
+        font-size: 30px;
+        opacity: .5;
+      }
     }
-  }
+  
 
   .infos {
     position: relative;
-
-    & .close {
-      position: absolute;
-      top: -1.5rem;
-      right: .5rem;
-      font-size: 30px;
-      opacity: .5;
-    }
   }
 
   // image project
