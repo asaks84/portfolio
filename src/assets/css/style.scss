@@ -2,119 +2,11 @@
 @import "./mediaQueries.scss";
 @import "./portfoliodisplay.scss";
 @import "./roots.scss";
-@import "menu.scss";
+@import "./menu.scss";
 @import "./modal-data.scss";
 
+@import "./util.scss";
 
-
-*{ box-sizing: border-box; }
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: "Ubuntu", sans-serif;
-  font-size: 16px;
-  color: var(--text-color);
-}
-
-.flex {
-  display: flex;
-}
-
-// Utilities
-
-a, a:visited{
-  color: var(--text-color);
-}
-p {
-  margin-bottom: 0.5rem;
-}
-hr {
-  margin: 1rem 0;
-
-  height: 1px;
-  border-width: 0;
-  background-color: var(--text-color2);
-  width: 100%;
-}
-h1, h3, h4, h5, h6{
-  font-family: "Dosis", sans-serif;
-}
-h1 {
-  font-size: 3rem;
-  margin: 0.3rem 0;
-  line-height: 3.1rem;
-}
-h3 {
-  font-size: 1.6rem;
-  line-height: 1.8rem;
-}
-h4 {
-  font-size: 1.3rem;
-  margin: 0.8rem 0;
-  font-weight: bold;
-}
-h6{
-  font-size: 1rem;
-}
-p {
-  line-height: 1.5rem;
-}
-.bold {
-  font-weight: bold;
-}
-.invert {
-  color: var(--background-color);
-  background-color: var(--text-color);
-  padding: 0 5px;
-}
-.invert2 {
-  color: var(--background-color2);
-  background-color: var(--text-color2);
-  padding: 0 5px;
-}
-
-.btn {
-  margin-top: 0;
-  margin-bottom: 1.5rem;
-
-    &::after {
-      display: inline-block;
-      content: "\F035F";
-      font-family: "Material Design Icons";
-      margin-left: 0.5rem;
-      transition: all linear 200ms;
-    }
-
-    &:hover {
-      &::after {
-        transform: rotate(90deg);
-      }
-    }
-  box-shadow: var(--box-shadow);
-  background-color: transparent;
-  border: 1px solid var(--text-color);
-  border-radius: 3px;
-  display: inline-block;
-  cursor: pointer;
-  color: var(--text-color);
-  font-family: "Dosis", sans-serif;
-  font-size: 1rem;
-  padding: 14px 27px;
-  text-decoration: none;
-  text-shadow: 0px 1px 0px #263666;
-}
-.btn:active {
-  position: relative;
-  top: 1px;
-}
-
-.btn2 {
-  border: 1px solid var(--text-color2);
-  color: var(--text-color2);
-}
 
 // Content
 
@@ -222,7 +114,7 @@ section#portfolio{
     justify-content: center;
 
     &>div{
-      width: 350px;
+      width: 330px;
       height: 300px;
       position: relative;
       cursor: pointer;
@@ -237,7 +129,7 @@ section#portfolio{
       }
 
       & .description{
-        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        box-shadow: var(--box-shadow);
         width: 350px;
         height: 300px;
         padding: 15px;

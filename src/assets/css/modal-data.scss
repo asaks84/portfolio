@@ -1,26 +1,100 @@
-.modal-wrap{
+$window-height: 450px;
+
+.transition {
+  transition: all .7s;
+}
+
+.modal-wrap {
   justify-content: center;
   align-items: center;
   position: fixed;
   width: 100vw;
   height: 100vh;
   min-height: 100%;
-  background-color: rgba(0, 0, 0, 0.15); 
+  background-color: rgba(0, 0, 0, 0.15);
   opacity: 0;
   z-index: 10;
   transition: opacity .3s;
 
+  &.visible {
+    opacity: 1;
+  }
 
-  &.visible { opacity: 1;}
-
-  & > #modal{
-    top: -6vw;
+  &>#modal {
+    top: -5vh;
     position: relative;
     margin-top: 2rem;
     width: 700px;
-    min-height: 450px;
+    min-height: $window-height;
     height: fit-content;
     background-color: #fff;
     box-shadow: var(--box-shadow);
+
+    &>.window {
+      align-items: center;
+      position: relative;
+      height: $window-height;
+      overflow: hidden;
+      }
+    }
+
+
+  // IMAGE CAROUSEL CONTROLLER
+
+
+  .window {
+    & i {
+      font-size: 60px;
+      position: absolute;
+      opacity: .3;
+      bottom: calc(50% - 30px);
+      
+      &.right {
+        right: 0;
+      }
+      &.left {
+        left: 0;
+      }
+    }
+  }
+
+  .infos {
+    position: relative;
+
+    & .close {
+      position: absolute;
+      top: -1.5rem;
+      right: .5rem;
+      font-size: 30px;
+      opacity: .5;
+    }
+  }
+
+  // image project
+  .carousel {
+    position: relative;
+    width: 10000px;
+    left: -700px;
+    top: 0;
+
+    &>div{
+      width: 700px;
+      height: 450px;
+      float:left;
+      display: flex;
+      flex-direction: column;
+
+      &:nth-child(1){ background-color: red; }
+      &:nth-child(2){ background-color: greenyellow; }
+      &:nth-child(3){ background-color: blue; }
+    }
+  }
+
+  // Project info
+  & .infos {
+
+    &>.box {
+      margin: 2rem 1rem 2.8rem 1rem;
+    }
   }
 }
