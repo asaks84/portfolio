@@ -17,7 +17,7 @@ function closeModal(e) {
 
 portfolio.forEach((e) => e.addEventListener('click', showModal));
 close.addEventListener('click', closeModal);
-modalWrap.addEventListener('click', closeModal, { capture: true });
+modalWrap.addEventListener('click', closeModal);
 
 // function shiftSlide(direction) {
 //   if (carousel.hasClass('transition')) return;

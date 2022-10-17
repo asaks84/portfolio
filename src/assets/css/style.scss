@@ -16,10 +16,10 @@
   width: 100%;
   justify-content: flex-end;
 
-  @include responsive(tablet){
+  @include responsive(tablet) {
     flex-direction: column;
   }
-  
+
 }
 
 .container {
@@ -34,7 +34,7 @@ main {
   width: var(--main-witdth);
   background-color: var(--background-color);
 
-  @include responsive(tablet){
+  @include responsive(tablet) {
     width: 100%;
   }
 }
@@ -49,15 +49,15 @@ section p:not(:last-child) {
 // SPECFIC SECTIONS 
 
 section:not(#home) {
-  & > div {
+  &>div {
     padding: 25px;
     width: 100%;
-    
-    @include responsive(tablet){
+
+    @include responsive(tablet) {
       padding-top: calc(15px + 65px);
     }
 
-    & > h1 {
+    &>h1 {
       margin: 0 0 2rem 0;
       position: relative;
 
@@ -69,6 +69,35 @@ section:not(#home) {
         background: var(--text-color); // suit your need
         top: calc(100% + 0.6rem);
         left: 0;
+      }
+    }
+
+    & h2 {
+      text-align: center;
+      margin-top: 1.5rem;
+      margin-bottom: 1rem;
+      position: relative;
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+      justify-content: left;
+
+      &::before,
+      &::after {
+        content: "";
+        width: 2rem;
+        height: 1px; // suit your need
+        background: var(--text-color); // suit your need
+        margin-bottom: -.4rem;
+      }
+
+      &::before {
+        margin-right: 10px;
+      }
+
+      &::after {
+        margin-left: 10px;
+        width: 100%;
       }
     }
   }
@@ -91,32 +120,35 @@ section:not(#home) {
     position: relative;
     padding: 1rem;
 
-    @include responsive(phone){
-      & h1{
+    @include responsive(phone) {
+      & h1 {
         text-align: center;
       }
     }
+
     & p {
       text-align: right;
       margin-right: 0.3rem;
     }
   }
 
-  & .btn{
+  & .btn {
     margin-top: 1.5rem;
   }
 }
-section#portfolio{
+
+section#portfolio {
   $displayWidth: 330px;
 
   flex-direction: column;
   align-items: center;
-  
-  & .container{
+
+  & .container {
     flex-wrap: wrap;
     justify-content: center;
 
-    &>div{
+
+    &>div {
       width: $displayWidth;
       height: 300px;
       position: relative;
@@ -125,13 +157,18 @@ section#portfolio{
       & h4 {
         margin: .2rem;
       }
-      & a, a:visited{ text-decoration: none;}
-      & p{
+
+      & a,
+      a:visited {
+        text-decoration: none;
+      }
+
+      & p {
         margin-top: .5rem;
         margin-bottom: 0;
       }
 
-      & .description{
+      & .description {
         box-shadow: var(--box-shadow);
         width: $displayWidth;
         height: 300px;
@@ -140,7 +177,7 @@ section#portfolio{
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-        background: var(--background-op-color) ;
+        background: var(--background-op-color);
         position: absolute;
         top: 0;
         left: 0;
@@ -148,20 +185,22 @@ section#portfolio{
         transition: opacity 300ms ease-out;
         z-index: 1;
 
-        & .btn{
+        & .btn {
           margin-bottom: 0;
         }
       }
 
-      &:hover{
-        & .description{
+      &:hover {
+        & .description {
           opacity: 1;
         }
       }
     }
+
     @include portfolio-items
   }
 }
+
 section#aboutme {
   flex-direction: column;
   justify-content: center;
@@ -170,21 +209,26 @@ section#aboutme {
   color: var(--text-color2);
   // height: 100vh;
 
-  & a, a:visited{ color: var(--text-color2);}
+  & a,
+  a:visited {
+    color: var(--text-color2);
+  }
 
-  & > div > h1 {
-    &::before {
-      content: "we don't talk about bruno~";
-      position: absolute;
-      font-size: 0.8rem;
-      right: 0;
-      top: 1.5rem;
-      opacity: 0.6;
-      font-style: italic;
-    }
+  &>div {
+      & > h1 {
+      &::before {
+        content: "we don't talk about bruno~";
+        position: absolute;
+        font-size: 0.8rem;
+        right: 0;
+        top: 1.5rem;
+        opacity: 0.6;
+        font-style: italic;
+      }
 
-    &::after {
-      background: var(--text-color2);
+      &::after {
+        background: var(--text-color2);
+      }
     }
   }
 
@@ -200,7 +244,7 @@ section#aboutme {
     align-items: center;
     flex-direction: column;
 
-    @include responsive(tablet){
+    @include responsive(tablet) {
       width: 100%;
     }
 
@@ -217,8 +261,8 @@ section#aboutme {
     flex-direction: column;
     justify-content: center;
     text-align: justify;
-    
-    @include responsive(tablet){
+
+    @include responsive(tablet) {
       width: 100%;
     }
   }
@@ -246,16 +290,28 @@ section#aboutme {
     }
   }
 }
+
 section#knowledge {
   background-color: var(--background-color2);
   color: var(--text-color2);
 
-  & > div > h1 {
-    &::after {
-      background: var(--text-color2);
+  & > div {
+
+    & > h1 {
+      &::after {
+        background: var(--text-color2);
+      }
+    }
+
+    & > h2 {
+      &::before,
+      &::after {
+        background: var(--text-color2);
+      }
     }
   }
 }
+
 #contact {
   height: 100vh;
 }
