@@ -31,7 +31,7 @@ hr {
   background-color: var(--text-color2);
   width: 100%;
 }
-h1, h3, h4, h5, h6{
+h1, h2, h3, h4, h5, h6{
   font-family: "Dosis", sans-serif;
 }
 h1 {
@@ -70,23 +70,25 @@ h6{
   padding: 0 5px;
 }
 
+.arrowbtn{
+  &::after {
+    display: inline-block;
+    content: "\F035F";
+    font-family: "Material Design Icons";
+    margin-left: 0.5rem;
+    transition: all linear 200ms;
+  }
+
+  &:hover {
+    &::after {
+      transform: rotate(90deg);
+    }
+  }
+}
+
 .btn {
   margin-top: 0;
   margin-bottom: 1.5rem;
-
-    &::after {
-      display: inline-block;
-      content: "\F035F";
-      font-family: "Material Design Icons";
-      margin-left: 0.5rem;
-      transition: all linear 200ms;
-    }
-
-    &:hover {
-      &::after {
-        transform: rotate(90deg);
-      }
-    }
   box-shadow: var(--box-shadow);
   background-color: transparent;
   border: 1px solid var(--text-color);
