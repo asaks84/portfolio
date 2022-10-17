@@ -9,9 +9,15 @@ function showModal() {
   fadeIn(modalWrap);
 }
 
-function closeModal() {
-  fadeOut(modalWrap);
+function closeModal(e) {
+  if (e.target.classList.contains('close')) {
+    fadeOut(modalWrap);
+  }
 }
+
+portfolio.forEach((e) => e.addEventListener('click', showModal));
+close.addEventListener('click', closeModal);
+modalWrap.addEventListener('click', closeModal, { capture: true });
 
 // function shiftSlide(direction) {
 //   if (carousel.hasClass('transition')) return;
@@ -31,7 +37,3 @@ function closeModal() {
 //     carousel.css('transform', 'translateX(0px)');
 //   }, 700);
 // }
-
-portfolio.forEach((e) => e.addEventListener('click', showModal));
-close.addEventListener('click', closeModal);
-modalWrap.addEventListener('click', closeModal);
