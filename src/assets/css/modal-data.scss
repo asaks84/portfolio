@@ -19,9 +19,12 @@ $window-height: 450px;
   opacity: 0;
   z-index: 10;
   transition: opacity .3s;
+  pointer-events: none;
+  top: 0;
 
   &.visible {
     opacity: 1;
+    pointer-events: initial;
   }
 
   &>#modal {
