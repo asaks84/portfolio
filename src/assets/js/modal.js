@@ -2,8 +2,23 @@ const close = document.querySelector('#modal .close');
 const modalWrap = document.querySelector('.modal-wrap');
 const btnOpen = document.querySelectorAll('.description .btn');
 const carouselWindow = document.querySelector('#modal');
+const divSlide = document.querySelectorAll('.carousel div');
+const carouselDiv = document.querySelector('.carousel');
 
 const slideWidth = parseFloat(window.getComputedStyle(carouselWindow).width);
+
+function setWidth() {
+  if (
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent,
+    )
+  ) {
+    divSlide.forEach((e) => { e.style.width = `${slideWidth}px`; });
+    carouselDiv.style.left = `-${slideWidth}px`;
+  }
+}
+
+setWidth();
 
 // OPEN/CLOSE PORTFOLIO
 function showModal() {
@@ -21,7 +36,6 @@ close.addEventListener('click', closeModal);
 modalWrap.addEventListener('click', closeModal);
 
 function shiftSlide(direction) {
-  const carouselDiv = document.querySelector('.carousel');
   const slideFirst = document.querySelector('.carousel > div:first-child');
   const slideLast = document.querySelector('.carousel > div:last-child');
 

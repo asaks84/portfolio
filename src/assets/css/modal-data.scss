@@ -37,6 +37,10 @@ $window-height: 450px;
     background-color: #fff;
     box-shadow: var(--box-shadow);
 
+    @include responsive(phone){
+      width: 100%;
+    }
+
     &>.window {
       align-items: center;
       position: relative;
@@ -89,6 +93,10 @@ $window-height: 450px;
       float:left;
       display: flex;
       flex-direction: column;
+
+      @include responsive(phone){
+        width: 100%;
+      }
 
       &.red{ background-color: red; }
       &.green{ background-color: greenyellow; }
