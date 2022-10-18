@@ -35,6 +35,8 @@ btnOpen.forEach((e) => e.addEventListener('touchend', showModal));
 close.addEventListener('click', closeModal);
 modalWrap.addEventListener('click', closeModal);
 
+// SHIFT SLIDE
+
 function shiftSlide(direction) {
   const slideFirst = document.querySelector('.carousel > div:first-child');
   const slideLast = document.querySelector('.carousel > div:last-child');
