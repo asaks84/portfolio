@@ -87,9 +87,9 @@ $window-height: 450px;
       display: flex;
       flex-direction: column;
 
-      &:nth-child(1){ background-color: red; }
-      &:nth-child(2){ background-color: greenyellow; }
-      &:nth-child(3){ background-color: blue; }
+      &.red{ background-color: red; }
+      &.green{ background-color: greenyellow; }
+      &.blue{ background-color: blue; }
     }
   }
 
