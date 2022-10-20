@@ -4,10 +4,6 @@ $window-height: 450px;
   transition: all .7s;
 }
 
-.displayNone{
-  display: none !important;
-}
-
 .modal-wrap {
   justify-content: center;
   align-items: center;
@@ -98,10 +94,6 @@ $window-height: 450px;
       @include responsive(phone){
         width: 100%;
       }
-
-      &.red{ background-color: red; }
-      &.green{ background-color: greenyellow; }
-      &.blue{ background-color: blue; }
     }
   }
 
@@ -115,6 +107,12 @@ $window-height: 450px;
 
     & .links{
       gap: 1rem;
+
+      & a { 
+        display: none; 
+
+        &.visible{ display: block; }
+      }
     }
 
     &>.box {

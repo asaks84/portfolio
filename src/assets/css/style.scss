@@ -4,10 +4,7 @@
 @import "./roots.scss";
 @import "./menu.scss";
 @import "./modal-data.scss";
-
 @import "./util.scss";
-
-
 
 // Content
 
@@ -205,8 +202,11 @@ section#portfolio {
         & .description {
           opacity: 1;
 
-          & .btn{
-            bottom: 2rem;
+          &:hover,
+          &:active {
+            & .btn{
+              bottom: 2rem;
+            }
           }
         }
       }
