@@ -49,6 +49,7 @@ section:not(#home) {
   &>div {
     padding: 25px;
     width: 100%;
+    padding-top: .6rem;
 
     @include responsive(tablet) {
       padding-top: calc(15px + 65px);

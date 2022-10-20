@@ -7,6 +7,7 @@ const portfolio = {
     site: 'http://www.rivierashotel.com.br',
     images: 3,
   },
+
   jagrao: {
     title: 'Jagrao Brazil',
     tags: '#JavaScript #HTML5 #CSS #WordPress',
@@ -14,12 +15,13 @@ const portfolio = {
     site: 'http://jagraobrazil.com',
     images: 3,
   },
+
   jagrao2: {
     title: 'Jagrao Brazil',
     tags: '#JavaScript #HTML5 #CSS #WordPress',
     text: 'Repaginação do site da empresa Jagrao Brazil. Layout por 360º Agência Criativa.',
     site: 'http://jagraobrazil.com',
-    images: 3,
+    images: 5,
   },
 };
 

@@ -5,31 +5,36 @@ import portfolio from './portfolioObj';
 const close = document.querySelector('#modal .close');
 const modalWrap = document.querySelector('.modal-wrap');
 const btnOpen = document.querySelectorAll('.description .btn');
-const carouselWindow = document.querySelector('#modal');
-const divSlide = document.querySelectorAll('.carousel div');
-const carouselDiv = document.querySelector('.carousel');
-const next = document.querySelector('i.right');
-const prev = document.querySelector('i.left');
-const headline = carouselWindow.querySelector('.infos h3');
-const tags = carouselWindow.querySelector('.infos h6');
-const text = carouselWindow.querySelector('.infos p');
-const linksDiv = carouselWindow.querySelector('div.links');
+const modal = document.querySelector('#modal');
+const carouselDiv = modal.querySelector('.carousel');
+const next = modal.querySelector('i.right');
+const prev = modal.querySelector('i.left');
+const headline = modal.querySelector('.infos h3');
+const tags = modal.querySelector('.infos h6');
+const text = modal.querySelector('.infos p');
+const linksDiv = modal.querySelector('div.links');
 
-const slideWidth = parseFloat(window.getComputedStyle(carouselWindow).width);
+const slideWidth = parseFloat(window.getComputedStyle(modal).width);
 
 // ADJUST SIZE FOR MOBILE
 
-function setWidth() {
+function setWidth(slide, num) {
   if (
     /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i
       .test(navigator.userAgent)
   ) {
-    divSlide.forEach((e) => { e.style.width = `${slideWidth}px`; });
+    // eslint-disable-next-line no-param-reassign
+    slide.style.width = `${slideWidth}px`;
     carouselDiv.style.left = `-${slideWidth}px`;
   }
+  carouselDiv.style.width = `${slideWidth * num}px`;
 }
 
-setWidth();
+// CLEAR SLIDES
+function clearSlides() {
+  const slides = carouselDiv.querySelectorAll('div');
+  slides.forEach((e) => e.remove());
+}
 
 // OPEN/CLOSE PORTFOLIO
 
@@ -40,10 +45,34 @@ function showModal() {
 function closeModal(e) {
   if (e.target.classList.contains('close')) {
     modalWrap.classList.remove('visible');
+    clearSlides();
   }
 }
 
 // FILL MODAL
+
+// create image slide
+
+function createImageSlide(client, image) {
+  const slideDiv = document.createElement('div');
+  const value = image.toLocaleString('en-US', {
+    minimumIntegerDigits: 2,
+    useGrouping: false,
+  });
+  setWidth(slideDiv, portfolio[client].images);
+  slideDiv.style.background = `url('assets/images/protfolio/${client}/${value}.jpg') center center/cover`;
+  carouselDiv.appendChild(slideDiv);
+}
+
+// select image slide
+
+function selectBgImage(client) {
+  const maxImagePortfolio = portfolio[client].images;
+
+  for (let i = 1; i <= maxImagePortfolio; i += 1) {
+    createImageSlide(client, i);
+  }
+}
 
 // infos
 
@@ -60,7 +89,7 @@ function setLink(link, type) {
 }
 function fillModal(e) {
   const btn = e.target.dataset.client;
-
+  selectBgImage(btn);
   headline.textContent = portfolio[btn].title;
   tags.textContent = portfolio[btn].tags;
   text.textContent = portfolio[btn].text;
