@@ -1,4 +1,10 @@
+// To save images use this path: 'assets/images/portfolio/<clientNameObject>/'
+// 00.jpg to portfolio screen
+// 01 to 'images' number to use on slider
+
 const portfolio = {
+  // Portfolio content
+
   rivieras: {
     title: 'Rivieras Hotel',
     tags: '#JavaScript #HTML5 #CSS',
@@ -21,6 +27,23 @@ const portfolio = {
     tags: '#JavaScript #HTML5 #CSS #WordPress',
     text: 'Repaginação do site da empresa Jagrao Brazil. Layout por 360º Agência Criativa.',
     site: 'http://jagraobrazil.com',
+    images: 5,
+  },
+
+  itauna: {
+    title: 'Itaúna Advisors',
+    tags: '#JavaScript #HTML5 #CSS #WebDesign',
+    text: 'Site institucional da empresa Itaúna Advisors do RJ de constultoria financeira.',
+    site: 'https://www.itaunaconsultoria.com.br/',
+    images: 5,
+  },
+
+  mauaeconzo: {
+    title: 'Maua & Conzo',
+    tags: '#JavaScript #HTML5 #CSS #WordPress',
+    text:
+      'Site pensado e desenvolvido com o intuito de captação de novos clientes para a empresa. Para atingir o resultado de captação de clientes, fizemos diversas landing pages dentro do site para que cada uma pudesse ser divulgada individualmente junto ao buscadores. Layout por Junior Mendes.',
+    site: 'https://www.mauaeconzo.com.br/',
     images: 5,
   },
 };

@@ -16,7 +16,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'assets/js/[name].js',
     assetModuleFilename: 'assets/images/[name][ext][query]',
-    clean: true,
+    // clean: true,
   },
 
   optimization: {
