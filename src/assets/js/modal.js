@@ -1,5 +1,3 @@
-// import portfolio from './portfolioObj';
-
 import portfolio from './portfolioObj';
 
 const close = document.querySelector('#modal .close');
@@ -49,6 +47,11 @@ function closeModal(e) {
   }
 }
 
+function hideButton(type) {
+  const linkButton = linksDiv.querySelector(`a.${type}`);
+  linkButton.classList.remove('visible');
+}
+
 // FILL MODAL
 
 // create image slide
@@ -75,11 +78,6 @@ function selectBgImage(client) {
 }
 
 // infos
-
-function hideButton(type) {
-  const linkButton = linksDiv.querySelector(`a.${type}`);
-  linkButton.classList.remove('visible');
-}
 
 function setLink(link, type) {
   const linkButton = linksDiv.querySelector(`a.${type}`);
