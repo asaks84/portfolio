@@ -1,0 +1,8 @@
+@mixin portfolio-items {
+    &>div:nth-last-child(6){ background: url('../images/portfolio/home/itauna.jpg') center center/cover;}
+    &>div:nth-last-child(5){ background: url('../images/portfolio/home/jagrao02.jpg') center center/cover;}
+    &>div:nth-last-child(4){ background: url('../images/portfolio/home/home-maua.jpg') center center/cover;}
+    &>div:nth-last-child(3){ background: url('../images/portfolio/home/home-jagrao.jpg') center center/cover;}
+    &>div:nth-last-child(2){ background: url('../images/portfolio/home/iris.jpg') center center/cover;}
+    &>div:nth-last-child(1){ background: url('../images/portfolio/home/home-rivieras.jpg') center center/cover;}
+}

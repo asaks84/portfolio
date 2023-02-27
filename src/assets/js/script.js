@@ -9,16 +9,17 @@ import './theme';
 import './activeLinkMenu';
 
 const body = document.querySelector('body');
+const loader = document.querySelector('.loader');
 body.classList.add('loading');
 
-(function startLoader() {
-  const loader = document.querySelector('.loader');
+document.addEventListener('DOMContentLoaded', () => {
+  console.log('window - loaded');
   loader.style.opacity = '0';
-  window.addEventListener('load', () => {
-    loader.addEventListener('transitionend', () => {
-      loader.style.display = 'none';
-      body.classList.remove('loading');
-      body.classList.add('loaded');
-    });
+  loader.addEventListener('transitionend', () => {
+    loader.style.display = 'none';
+    body.classList.remove('Display None applied');
+    body.classList.add('loaded');
   });
-}());
+
+  console.log('All Done! =)');
+});

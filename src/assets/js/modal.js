@@ -57,13 +57,15 @@ function hideButton(type) {
 // create image slide
 
 function createImageSlide(client, image) {
+  const folder = `assets/images/portfolio/${client}`;
   const slideDiv = document.createElement('div');
   const value = image.toLocaleString('en-US', {
     minimumIntegerDigits: 2,
     useGrouping: false,
   });
+
   setWidth(slideDiv, portfolio[client].images);
-  slideDiv.style.background = `url('assets/images/protfolio/${client}/${value}.jpg') center center/cover`;
+  slideDiv.style.background = `url('${folder}/${value}.jpg') center center/cover`;
   carouselDiv.appendChild(slideDiv);
 }
 
