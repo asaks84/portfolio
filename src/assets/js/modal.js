@@ -63,7 +63,7 @@ function createImageSlide(client, image) {
     useGrouping: false,
   });
   setWidth(slideDiv, portfolio[client].images);
-  slideDiv.style.background = `url('assets/images/protfolio/${client}/${value}.jpg') center center/cover`;
+  slideDiv.style.background = `url('assets/images/portfolio/${client}/${value}.jpg') center center/cover`;
   carouselDiv.appendChild(slideDiv);
 }
 

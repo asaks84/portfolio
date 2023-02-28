@@ -1,10 +1,8 @@
 // To save images use this path: 'assets/images/portfolio/<clientNameObject>/'
-// 00.jpg to portfolio screen
 // 01 to 'images' number to use on slider
 
 const portfolio = {
   // Portfolio content
-
   rivieras: {
     title: 'Rivieras Hotel',
     tags: '#JavaScript #HTML5 #CSS',
@@ -35,7 +33,7 @@ const portfolio = {
     tags: '#JavaScript #HTML5 #CSS #WebDesign',
     text: 'Site institucional da empresa Itaúna Advisors do RJ de constultoria financeira.',
     site: 'https://www.itaunaconsultoria.com.br/',
-    images: 5,
+    images: 3,
   },
 
   mauaeconzo: {
