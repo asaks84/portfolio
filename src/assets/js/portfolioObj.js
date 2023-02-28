@@ -44,6 +44,15 @@ const portfolio = {
     site: 'https://www.mauaeconzo.com.br/',
     images: 5,
   },
+
+  iris: {
+    title: 'Iris Laboratories',
+    tags: '#HTML5 #CSS #WordPress #WP-Plugins',
+    text:
+      'Site desenvolvido para a empresa norte-americana especializada em inspeção e remoção de amianto e mofos dentro de imóveis.',
+    site: 'http://www.irislaboratories.com/',
+    images: 4,
+  },
 };
 
 export default portfolio;
