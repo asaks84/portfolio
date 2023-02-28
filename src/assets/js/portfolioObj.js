@@ -25,7 +25,7 @@ const portfolio = {
     tags: '#JavaScript #HTML5 #CSS #WordPress',
     text: 'Repaginação do site da empresa Jagrao Brazil. Layout por 360º Agência Criativa.',
     site: 'http://jagraobrazil.com',
-    images: 5,
+    images: 4,
   },
 
   itauna: {
