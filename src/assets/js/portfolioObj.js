@@ -42,7 +42,7 @@ const portfolio = {
     text:
       'Site pensado e desenvolvido com o intuito de captação de novos clientes para a empresa. Para atingir o resultado de captação de clientes, fizemos diversas landing pages dentro do site para que cada uma pudesse ser divulgada individualmente junto ao buscadores. Layout por Junior Mendes.',
     site: 'https://www.mauaeconzo.com.br/',
-    images: 5,
+    images: 3,
   },
 
   iris: {
