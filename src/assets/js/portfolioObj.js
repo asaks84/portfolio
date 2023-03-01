@@ -12,7 +12,7 @@ const portfolio = {
     images: 3,
   },
 
-  jagrao: {
+  jagrao1: {
     title: 'Jagrao Brazil',
     tags: '#JavaScript #HTML5 #CSS #WordPress',
     text: 'Desenvolvimento do site bilingue para exposição de produtos da exportadora de frutas Jagrão Brazil. Layout por Sergio Lima.',
