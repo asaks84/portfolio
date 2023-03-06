@@ -70,7 +70,7 @@ section:not(#home) {
       }
     }
 
-    & h2 {
+    & > h2 {
       text-align: center;
       margin-top: 1.5rem;
       margin-bottom: 1rem;
@@ -319,13 +319,45 @@ section#knowledge {
         background: var(--text-color2);
       }
     }
-
     & > h2 {
       &::before,
       &::after {
         background: var(--text-color2);
       }
     }
+  }
+
+  & .container {
+    justify-content: space-around;
+    flex-wrap: wrap;
+    row-gap: 3rem;
+
+    & > .card {
+      flex-direction: row;
+      align-items: center;
+
+      & > .card-icon {
+        text-align: center;
+        width: 100px;      }
+
+      & > .card-title {
+        padding: 0 1.2rem;
+        text-align: center;
+        & > h2 {
+          margin: 0;
+        }
+      }
+
+      @include responsive(phone) {
+        flex-direction: column;
+        width: 152px;
+
+        & > .card-title {
+          
+        }
+      }
+    }
+
   }
 }
 
