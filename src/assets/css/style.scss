@@ -51,10 +51,6 @@ section:not(#home) {
     width: 100%;
     padding-top: .6rem;
 
-    @include responsive(tablet) {
-      padding-top: calc(15px + 65px);
-    }
-
     &>h1 {
       margin: 0 0 2rem 0;
       position: relative;
@@ -133,6 +129,15 @@ section:not(#home) {
   & .btn {
     margin-top: 1.5rem;
   }
+}
+
+section#portfolio,
+section#contact {
+  & > div {
+    @include responsive(tablet) {
+      padding-top: calc(15px + 65px);
+    }
+  }  
 }
 
 section#portfolio {
