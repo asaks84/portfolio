@@ -8,7 +8,7 @@ module.exports = {
   entry: {
     main: [
       './src/assets/js/script.js',
-      './src/assets/js/modal.js',
+      './src/assets/js/portfolioModal.js',
     ],
   },
 

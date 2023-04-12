@@ -4,10 +4,10 @@ export function fadeOut(disable, dontRemove) {
   // Then removing the eventListner. This solved the problem with displayNone
   // auto change without calling fadeOut().
 
-  const displayNone = function () {
+  function displayNone() {
     disable.classList.add('displayNone');
     disable.removeEventListener('transitionend', displayNone);
-  };
+  }
 
   disable.classList.remove('visible');
   disable.classList.add('hidden');

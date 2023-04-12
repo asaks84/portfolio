@@ -13,13 +13,10 @@ const loader = document.querySelector('.loader');
 body.classList.add('loading');
 
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('window - loaded');
   loader.style.opacity = '0';
   loader.addEventListener('transitionend', () => {
     loader.style.display = 'none';
-    body.classList.remove('Display None applied');
+    body.classList.remove('loading');
     body.classList.add('loaded');
   });
-
-  console.log('All Done! =)');
 });
