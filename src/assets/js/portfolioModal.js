@@ -2,8 +2,8 @@ import portfolio from './portfolioObj';
 import {
   modal, showModal, closeModal, modalWrap,
 } from './modal';
+import { shiftSlide, getImageSlide } from './carousel';
 
-const slideWidth = parseFloat(window.getComputedStyle(modal).width);
 const btnPortfolioOpen = document.querySelectorAll('#portfolio .description .btn');
 
 // creating carousel elements
@@ -23,28 +23,6 @@ const links = document.createElement('div');
 const site = document.createElement('a');
 const repo = document.createElement('a');
 
-// SHIFT SLIDE
-function shiftSlide(direction) {
-  const slideFirst = document.querySelector('.carousel > div:first-child');
-  const slideLast = document.querySelector('.carousel > div:last-child');
-
-  if (carousel.classList.contains('transition')) return;
-
-  carousel.classList.add('transition');
-  carousel.style.transform = `translateX(${direction * slideWidth}px)`;
-
-  setTimeout(() => {
-    if (direction === 1) {
-      slideFirst.parentNode.insertBefore(slideLast, slideFirst);
-    } else if (direction === -1) {
-      slideLast.parentNode.append(slideFirst);
-    }
-
-    carousel.classList.remove('transition');
-    carousel.style.transform = 'translateX(0px)';
-  }, 700);
-}
-
 // SIDE FUNCTIONS
 
 // clear Carousel and close Modal
@@ -63,19 +41,6 @@ function clearCarousel(e) {
   }
 }
 
-// adjuse size for mobile
-function setWidth(slide, num) {
-  const elemSlide = slide;
-  if (
-    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i
-      .test(navigator.userAgent)
-  ) {
-    elemSlide.style.width = `${slideWidth}px`;
-    carousel.style.left = `-${slideWidth}px`;
-  }
-  carousel.style.width = `${slideWidth * num}px`;
-}
-
 function hideButton(type) {
   const linkButton = links.querySelector(`a.${type}`);
   linkButton.classList.remove('visible');
@@ -83,8 +48,7 @@ function hideButton(type) {
 
 // CREATING MODAL DOM
 function createPortfolioModal() {
-  // ordering Carousel images
-
+  // ordering Carousel elements
   windows.classList.add('window');
   carousel.classList.add('carousel');
   arrowLeft.classList.add('left', 'mdi', 'mdi-chevron-left-box');
@@ -97,7 +61,7 @@ function createPortfolioModal() {
   windows.appendChild(arrowLeft);
   windows.appendChild(arrowRight);
 
-  // odering infos
+  // odering infos elements
   infos.classList.add('infos');
   closeBtn.classList.add('close', 'mdi', 'mdi-close');
   box.classList.add('box');
@@ -128,31 +92,7 @@ function createPortfolioModal() {
   modal.appendChild(infos);
 }
 
-// FILL MODAL
-
-// create image slide
-function createImageSlide(client, image) {
-  const folder = `assets/images/portfolio/${client}`;
-  const slideDiv = document.createElement('div');
-  const value = image.toLocaleString('en-US', {
-    minimumIntegerDigits: 2,
-    useGrouping: false,
-  });
-
-  setWidth(slideDiv, portfolio[client].images);
-  slideDiv.style.background = `url('${folder}/${value}.jpg') center center/cover`;
-  carousel.appendChild(slideDiv);
-}
-
-// select image slide
-
-function selectBgImage(client) {
-  const maxImagePortfolio = portfolio[client].images;
-
-  for (let i = 1; i <= maxImagePortfolio; i += 1) {
-    createImageSlide(client, i);
-  }
-}
+// FILL CONTENT
 
 // infos
 function setLink(link, type) {
@@ -165,10 +105,10 @@ function setLink(link, type) {
 function fillModal(e) {
   const btn = e.target.dataset.client;
 
-  selectBgImage(btn);
+  getImageSlide(btn);
 
-  h6.textContent = portfolio[btn].title;
-  h3.textContent = portfolio[btn].tags;
+  h3.textContent = portfolio[btn].title;
+  h6.textContent = portfolio[btn].tags;
   para.textContent = portfolio[btn].text;
 
   if (Object.prototype.hasOwnProperty.call(portfolio[btn], 'site')) {
