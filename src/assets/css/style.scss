@@ -4,6 +4,7 @@
 @import "./roots.scss";
 @import "./menu.scss";
 @import "./modal-data.scss";
+@import "./carousel.scss";
 @import "./util.scss";
 
 // Content
@@ -356,10 +357,6 @@ section#knowledge {
       @include responsive(phone) {
         flex-direction: column;
         width: 152px;
-
-        & > .card-title {
-          
-        }
       }
     }
 

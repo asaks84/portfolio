@@ -1,8 +1,8 @@
 import portfolio from './portfolioObj';
-import {
-  modal, showModal, closeModal, modalWrap,
-} from './modal';
 import { shiftSlide, getImageSlide } from './carousel';
+import {
+  fillModal, showModal, closeModal, modalWrap, toCloseModal,
+} from './modal';
 
 const btnPortfolioOpen = document.querySelectorAll('#portfolio .description .btn');
 
@@ -25,25 +25,23 @@ const repo = document.createElement('a');
 
 // SIDE FUNCTIONS
 
-// clear Carousel and close Modal
-function cleanContent() {
+// validation Object content
+// eslint-disable-next-line max-len
+const validationObjProp = (Obj, client, Prop) => Object.prototype.hasOwnProperty.call(Obj[client], Prop);
+
+// clear Carousel
+function clearCarousel() {
   while (carousel.lastElementChild) {
     carousel.removeChild(carousel.lastChild);
   }
-  closeModal();
-  modalWrap.removeEventListener('transitionend', cleanContent);
+  modalWrap.removeEventListener('transitionend', clearCarousel);
 }
 
-function clearCarousel(e) {
-  if (e.target.classList.contains('close')) {
-    modalWrap.addEventListener('transitionend', cleanContent);
-    modalWrap.classList.remove('visible');
+function execCloseModal(e) {
+  if (toCloseModal(e)) {
+    modalWrap.addEventListener('transitionend', clearCarousel);
+    closeModal(e);
   }
-}
-
-function hideButton(type) {
-  const linkButton = links.querySelector(`a.${type}`);
-  linkButton.classList.remove('visible');
 }
 
 // CREATING MODAL DOM
@@ -73,7 +71,7 @@ function createPortfolioModal() {
   site.textContent = 'Site';
   repo.textContent = 'Repositório';
 
-  closeBtn.addEventListener('click', clearCarousel);
+  closeBtn.addEventListener('click', execCloseModal);
   site.setAttribute('target', '_blank');
   repo.setAttribute('target', '_blank');
 
@@ -88,8 +86,8 @@ function createPortfolioModal() {
   infos.appendChild(closeBtn);
   infos.appendChild(box);
 
-  modal.appendChild(windows);
-  modal.appendChild(infos);
+  fillModal(windows);
+  fillModal(infos);
 }
 
 // FILL CONTENT
@@ -102,30 +100,30 @@ function setLink(link, type) {
   linkButton.classList.add('visible');
 }
 
-function fillModal(e) {
-  const btn = e.target.dataset.client;
+function fillContent(e) {
+  const clientID = e.target.dataset.client;
 
-  getImageSlide(btn);
+  getImageSlide(clientID);
 
-  h3.textContent = portfolio[btn].title;
-  h6.textContent = portfolio[btn].tags;
-  para.textContent = portfolio[btn].text;
+  h3.textContent = portfolio[clientID].title;
+  h6.textContent = portfolio[clientID].tags;
+  para.textContent = portfolio[clientID].text;
 
-  if (Object.prototype.hasOwnProperty.call(portfolio[btn], 'site')) {
-    setLink(portfolio[btn].site, 'site');
-  } else hideButton('site');
-  if (Object.prototype.hasOwnProperty.call(portfolio[btn], 'repo')) {
-    setLink(portfolio[btn].repo, 'repo');
-  } else hideButton('repo');
+  if (validationObjProp(portfolio, clientID, 'site')) {
+    setLink(portfolio[clientID].site, 'site');
+  }
+  if (validationObjProp(portfolio, clientID, 'repo')) {
+    setLink(portfolio[clientID].repo, 'repo');
+  }
 
   showModal(e);
 }
 
 function createPortfolioElements(e) {
   createPortfolioModal();
-  fillModal(e);
+  fillContent(e);
 }
 
-modalWrap.addEventListener('click', clearCarousel);
+modalWrap.addEventListener('click', execCloseModal);
 btnPortfolioOpen.forEach((e) => e.addEventListener('click', createPortfolioElements));
 btnPortfolioOpen.forEach((e) => e.addEventListener('touchend', createPortfolioElements));

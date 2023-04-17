@@ -1,0 +1,57 @@
+// CAROUSEL 
+
+$slideWidth: 700px;
+$slideHeight: 450px;
+
+.window {
+  align-items: center;
+  position: relative;
+  height: $slideHeight;
+  overflow: hidden;
+}
+
+.carousel {
+  position: relative;
+  width: 10000px;
+  left: -$slideWidth;
+  top: 0;
+
+  // CAROUSEL CONTROLLER
+
+  & ~ i {
+    font-size: 60px;
+    position: absolute;
+    opacity: .3;
+    bottom: calc(50% - 30px);
+    cursor: pointer;
+    
+    &.right {
+      right: 0;
+    }
+    &.left {
+      left: 0;
+    }
+  }
+
+  &>div{
+    width: $slideWidth;
+    height: $slideHeight;
+    float:left;
+    display: flex;
+    flex-direction: column;
+
+    @include responsive(phone){
+      width: 100%;
+    }
+  }
+}
+
+i.close {
+  position: absolute;
+  top: -1.5rem;
+  right: .5rem;
+  font-size: 30px;
+  opacity: .5;
+  height: fit-content;
+  cursor: pointer;
+}

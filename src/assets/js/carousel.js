@@ -1,8 +1,10 @@
 import { modal } from './modal';
 import portfolio from './portfolioObj';
 
+const carouselDiv = modal;
+
+const slideWidth = parseFloat(window.getComputedStyle(carouselDiv).width);
 const getCarousel = () => document.querySelector('.carousel');
-const slideWidth = parseFloat(window.getComputedStyle(modal).width);
 
 // adjuse size for mobile
 function setWidth(slide, num) {

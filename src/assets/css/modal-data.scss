@@ -1,4 +1,5 @@
-$window-height: 450px;
+$modalWidth: 700px;
+$modalHeight: 450px;
 
 .transition {
   transition: all .7s;
@@ -27,74 +28,19 @@ $window-height: 450px;
     top: -5vh;
     position: relative;
     margin-top: 2rem;
-    width: 700px;
-    min-height: $window-height;
+    width: $modalWidth;
+    min-height: $modalHeight;
     height: fit-content;
     background-color: #fff;
     box-shadow: var(--box-shadow);
 
-    @include responsive(phone){
+    @include responsive(phone) {
       width: 100%;
     }
-
-    &>.window {
-      align-items: center;
-      position: relative;
-      height: $window-height;
-      overflow: hidden;
-      }
-    }
-
-
-  // IMAGE CAROUSEL CONTROLLER
-
-    i {
-      font-size: 60px;
-      position: absolute;
-      opacity: .3;
-      bottom: calc(50% - 30px);
-      cursor: pointer;
-      
-      &.right {
-        right: 0;
-      }
-      &.left {
-        left: 0;
-      }
-      
-      &.close {
-        position: absolute;
-        top: -1.5rem;
-        right: .5rem;
-        font-size: 30px;
-        opacity: .5;
-        height: fit-content;
-      }
-    }
-  
+  }
 
   .infos {
     position: relative;
-  }
-
-  // image project
-  .carousel {
-    position: relative;
-    width: 10000px;
-    left: -700px;
-    top: 0;
-
-    &>div{
-      width: 700px;
-      height: 450px;
-      float:left;
-      display: flex;
-      flex-direction: column;
-
-      @include responsive(phone){
-        width: 100%;
-      }
-    }
   }
 
   // Project info
@@ -105,13 +51,15 @@ $window-height: 450px;
       margin-bottom: 1rem;
     }
 
-    & .links{
+    & .links {
       gap: 1rem;
 
-      & a { 
-        display: none; 
+      & a {
+        display: none;
 
-        &.visible{ display: block; }
+        &.visible {
+          display: block;
+        }
       }
     }
 
