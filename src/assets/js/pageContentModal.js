@@ -6,6 +6,9 @@ import {
 
 const btnPortfolioOpen = document.querySelectorAll('#portfolio .description .btn');
 
+// createing binder content
+const binder = document.createElement('div');
+
 // creating carousel elements
 const windows = document.createElement('div');
 const carousel = document.createElement('div');
@@ -86,8 +89,12 @@ function createPortfolioModal() {
   infos.appendChild(closeBtn);
   infos.appendChild(box);
 
-  fillModal(windows);
-  fillModal(infos);
+  binder.classList.add('flex', 'binder');
+
+  binder.appendChild(windows);
+  binder.appendChild(infos);
+
+  fillModal(binder);
 }
 
 // FILL CONTENT
@@ -116,7 +123,7 @@ function fillContent(e) {
     setLink(portfolio[clientID].repo, 'repo');
   }
 
-  showModal(e);
+  showModal();
 }
 
 function createPortfolioElements(e) {
