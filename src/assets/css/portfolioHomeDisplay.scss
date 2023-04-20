@@ -6,3 +6,37 @@
     &>div:nth-last-child(2){ background: url('../images/portfolio/home/iris.jpg') center center/cover;}
     &>div:nth-last-child(1){ background: url('../images/portfolio/home/home-rivieras.jpg') center center/cover;}
 }
+
+@mixin portfolio-projects {
+    &:nth-last-child(3)::before{ 
+        background: url('../images/js-projects/calculator.jpg') top center/cover;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "";
+        filter: grayscale(1);
+    }
+    &:nth-last-child(2)::before{ 
+        background: url('../images/js-projects/tictactoe.jpg') top center/cover;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "";
+        filter: grayscale(1);
+    }
+
+    &:nth-last-child(1)::before{ 
+        background: url('../images/js-projects/jokenpo.jpg') top center/cover;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "";
+        filter: grayscale(1);
+    }
+}

@@ -234,21 +234,54 @@ section#portfolio {
   }
 
   & .studyProjects {
+    
+    & > .container {
+      gap: .5rem;
+
+      @include responsive(phone) {
+        flex-direction: column;
+      }
+    }
+
     & .card {
+      // border: 1px solid;
+      border-color: rgb(136, 136, 136);
+      position: relative;
+      justify-content: center;
       text-align: center;
-      transition: all .3s ease-in-out;
+      transition: all 350ms ease-in-out;
+      
       flex: 1;
       overflow: hidden;
+      height: 330px;
+      
+      @include responsive(phone){
+        height: 200px;
+      }
+
+      // @include portfolio-projects;
 
       & img {
-        object-fit: cover;
+       // visibility:  hidden;
+        object-fit: fill;
         filter: grayscale(1);
+
+        @include responsive(phone){
+          filter: none;
+          object-fit: cover;
+          width: 330px;
+          height: 300px;
+        }
       }
 
       &:hover {
-        flex: 3;
+        flex: 2 1;
 
-        & img{
+        &::before{
+          filter: none;
+        }
+
+        & img {
           filter: none;
         }
       }
