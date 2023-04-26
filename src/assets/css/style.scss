@@ -49,7 +49,7 @@ section:not(#home) {
   &>div {
     padding: 25px;
     width: 100%;
-    padding-top: .6rem;
+    padding-top: .5rem;
 
     &>h1 {
       margin: 0 0 2rem 0;
@@ -72,8 +72,7 @@ section:not(#home) {
 
     &>h2 {
       text-align: center;
-      margin-top: 1.5rem;
-      margin-bottom: 1rem;
+      margin: 1.5rem 0;
       position: relative;
       display: flex;
       align-items: center;
@@ -109,7 +108,7 @@ section:not(#home) {
   }
 }
 
-#home {
+section#home {
   position: relative;
   background-color: var(--background-color);
   font-family: Dosis;
@@ -164,12 +163,14 @@ section:not(#home) {
 
   & .btn {
     margin-top: 1.5rem;
+    background-color:rgba(255, 255, 255, 0.5);
     z-index: 10;
   }
 }
 
-section#portfolio,
-section#contact {
+// section height adjust for responsive layout
+
+section#portfolio {
   &>div {
     @include responsive(tablet) {
       padding-top: calc(15px + 65px);
@@ -265,6 +266,7 @@ section#portfolio {
 
       @include responsive(phone) {
         flex-direction: column;
+        align-items: center;
       }
     }
 
@@ -282,6 +284,7 @@ section#portfolio {
       
       @include responsive(phone){
         height: 200px;
+        width: 300px;
       }
 
       // @include portfolio-projects;
@@ -312,6 +315,11 @@ section#portfolio {
         justify-content: center;
         align-items: center;
         padding: 1.5rem 0;
+
+        @include responsive(phone) {
+          height: 100%;
+          justify-content: space-around;
+        }
 
         & .btn{
           margin-top: 1.5rem;
@@ -351,6 +359,7 @@ section#aboutme {
   }
 
   &>div {
+    padding-bottom: 0;
     &>h1 {
       &::before {
         content: "we don't talk about bruno~";
@@ -426,11 +435,6 @@ section#aboutme {
       & span {
         font-weight: bold;
       }
-
-      & p:last-child {
-        margin-top: 0.3rem;
-        margin-bottom: 1rem;
-      }
     }
   }
 }
@@ -448,7 +452,7 @@ section#knowledge {
     }
 
     &>h2 {
-
+      margin-top: 0;
       &::before,
       &::after {
         background: var(--text-color2);
@@ -490,6 +494,10 @@ section#knowledge {
 
 #contact {
   height: 100vh;
+
+  @include responsive(phone){
+    height: calc(100vh - 65px);
+  }
 }
 
 // FUNCTIONS
