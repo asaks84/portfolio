@@ -113,3 +113,9 @@ h5{
 .noDelay {
   transition-delay: 0ms !important;
 }
+.hidden {
+  visibility: hidden;
+}
+.visible {
+  visibility: visible !important;
+}
