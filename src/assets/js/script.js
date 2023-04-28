@@ -8,6 +8,9 @@ import '@mdi/font/css/materialdesignicons.min.css';
 import './theme';
 import './activeLinkMenu';
 
+const testUserAgent = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i
+  .test(navigator.userAgent);
+
 const body = document.querySelector('body');
 const loader = document.querySelector('.loader');
 body.classList.add('loading');
@@ -20,3 +23,23 @@ document.addEventListener('DOMContentLoaded', () => {
     body.classList.add('loaded');
   });
 });
+
+// set HR width
+
+(function setContactHRStyle() {
+  const divInfos = document.querySelector('section#contact .infos');
+  const verticalLine = divInfos.querySelector('hr');
+  const divContactInfo = divInfos.querySelector('.contactinfo');
+  const footer = divInfos.querySelector('footer');
+
+  if (testUserAgent) {
+    return;
+  }
+  verticalLine.style.width = `${divInfos.offsetHeight + 20}px`;
+  verticalLine.style.marginTop = `${divInfos.offsetHeight / 2}px`;
+  divContactInfo.style.marginRight = `-${divInfos.offsetHeight / 3}px`;
+  footer.style.width = `-${divContactInfo.offsetWidth}px`;
+  footer.style.marginLeft = `-${divInfos.offsetHeight / 3}px`;
+}());
+
+export default testUserAgent;

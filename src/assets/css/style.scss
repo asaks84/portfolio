@@ -498,8 +498,80 @@ section#knowledge {
   }
 }
 
-#contact {
+section#contact {
   height: 100vh;
+
+  & > div {
+    height: calc(100% - 25px - 0.5rem - 2rem);
+    position: relative ;
+  }
+
+  & .container {
+    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+
+    & > div:first-child {
+      text-align: center;
+    }
+
+    & .infos {
+      position: relative;
+      justify-content: center;
+
+           & .contactinfo {
+        flex: 1;
+        & ul {
+          flex-direction: column;
+          gap: .5rem;
+
+          & li {
+            text-align: right;
+            flex-direction: row-reverse;
+            width: 100%;
+          
+            & p {
+              display: inline-block;
+              margin-bottom: 0;
+            }
+          }
+        }
+
+        & i {
+          
+          margin: .5rem 0 0 1rem ;
+          font-size: 1.5rem;
+
+        }
+      }
+
+      & footer {
+        flex: 1;
+        align-items: center;
+        justify-content: left;
+        gap: 2rem;
+
+        & i {
+          font-size: 1.7rem;
+          &:hover {
+            color: var(--alt-text-logo);
+          }
+        }
+      }
+    }
+  }
+
+  & hr {
+    background-color: var(--text-color);
+    transform: rotate(90deg);
+    position: relative;
+    width: auto;
+
+    @include responsive(phone){
+      display: none;
+    }
+  }
 
   @include responsive(phone){
     height: calc(100vh - 65px);

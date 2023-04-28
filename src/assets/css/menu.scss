@@ -85,6 +85,16 @@ header {
   }
 
   & .contact{
+    z-index: 1;
+    gap: .7rem;
+
+
+    & i {
+      font-size: 1.15rem;
+      &:hover {
+        color: var(--alt-text-logo);
+      }
+    }
     @include responsive(tablet){
       display: none;
     }

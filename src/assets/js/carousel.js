@@ -1,5 +1,6 @@
 import { modal } from './modal';
 import portfolio from './portfolioObj';
+import testUserAgent from './script';
 
 const carouselDiv = modal;
 
@@ -9,10 +10,7 @@ const getCarousel = () => document.querySelector('.carousel');
 // adjuse size for mobile
 function setWidth(slide, num) {
   const elemSlide = slide;
-  if (
-    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i
-      .test(navigator.userAgent)
-  ) {
+  if (testUserAgent) {
     elemSlide.style.width = `${slideWidth}px`;
     getCarousel().style.left = `-${slideWidth}px`;
   }
