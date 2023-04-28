@@ -519,8 +519,8 @@ section#contact {
     & .infos {
       position: relative;
       justify-content: center;
-
-           & .contactinfo {
+      
+      & .contactinfo {
         flex: 1;
         & ul {
           flex-direction: column;
@@ -535,14 +535,29 @@ section#contact {
               display: inline-block;
               margin-bottom: 0;
             }
+
+            @include responsive(phone){
+              text-align: left;
+              flex-direction: row;
+              justify-content: center;
+              & div{
+                width:150px;
+              }
+            }
           }
         }
 
         & i {
-          
           margin: .5rem 0 0 1rem ;
           font-size: 1.5rem;
 
+          @include responsive(phone){
+            margin-right: .5rem;
+          }
+        }
+
+        @include responsive(phone){
+          margin-bottom: 50%;
         }
       }
 
@@ -558,6 +573,20 @@ section#contact {
             color: var(--alt-text-logo);
           }
         }
+
+        @include responsive(phone){
+          justify-content: center;
+        }
+      }
+
+      @include responsive(phone) {
+        flex-direction: column;
+      }
+    }
+
+    @include responsive(phone){
+      & > div:last-child {
+        display: none;
       }
     }
   }
