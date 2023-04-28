@@ -317,7 +317,14 @@ section#portfolio {
 
         @include responsive(phone) {
           height: 100%;
-          justify-content: space-around;
+
+          & h5 {
+            margin-top: 1rem;
+          }
+          
+          & a.btn {
+            margin-top: auto;
+          }
         }
 
         & .btn{
