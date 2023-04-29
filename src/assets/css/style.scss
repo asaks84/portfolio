@@ -536,7 +536,7 @@ section#contact {
               margin-bottom: 0;
             }
 
-            @include responsive(tablet){
+            @include responsive(phone){
               text-align: left;
               flex-direction: row;
               justify-content: center;
@@ -551,12 +551,12 @@ section#contact {
           margin: .5rem 0 0 1rem ;
           font-size: 1.5rem;
 
-          @include responsive(tablet){
+          @include responsive(phone){
             margin-right: .5rem;
           }
         }
 
-        @include responsive(tablet){
+        @include responsive(phone){
           margin-bottom: 50%;
         }
       }
@@ -574,17 +574,17 @@ section#contact {
           }
         }
 
-        @include responsive(tablet){
+        @include responsive(phone){
           justify-content: center;
         }
       }
 
-      @include responsive(tablet) {
+      @include responsive(phone) {
         flex-direction: column;
       }
     }
 
-    @include responsive(tablet){
+    @include responsive(phone){
       & > div:last-child {
         display: none;
       }
@@ -597,12 +597,12 @@ section#contact {
     position: relative;
     width: auto;
 
-    @include responsive(tablet){
+    @include responsive(phone){
       display: none;
     }
   }
 
-  @include responsive(tablet){
+  @include responsive(phone){
     height: calc(100vh - 65px);
   }
 }
