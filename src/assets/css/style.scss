@@ -238,6 +238,7 @@ section#portfolio {
             bottom: 0;
             margin-bottom: 0;
             font-size: 1rem;
+            pointer-events: none;
             transition: all 300ms ease-out;
           }
         }

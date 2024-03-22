@@ -8,8 +8,9 @@ import '@mdi/font/css/materialdesignicons.min.css';
 import './theme';
 import './activeLinkMenu';
 
-const testUserAgent = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i
-  .test(navigator.userAgent);
+const testUserAgent = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+  navigator.userAgent,
+);
 
 const body = document.querySelector('body');
 const loader = document.querySelector('.loader');
@@ -23,6 +24,16 @@ document.addEventListener('DOMContentLoaded', () => {
     body.classList.add('loaded');
   });
 });
+
+const portfolioDescription = document.querySelectorAll('section#portfolio div.description');
+portfolioDescription.forEach((elem) => elem.addEventListener('transitionend', () => {
+  const btn = elem.querySelector('.btn');
+  if (parseInt(getComputedStyle(elem).opacity) === 1) {
+    btn.style.pointerEvents = 'all';
+    return;
+  }
+  btn.style.pointerEvents = 'none';
+}));
 
 // set HR width
 
