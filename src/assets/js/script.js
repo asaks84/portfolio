@@ -46,7 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-const portfolioDescription = document.querySelectorAll('section#portfolio div.description');
+const portfolioDescription = document.querySelectorAll('section div.description');
+console.log(portfolioDescription);
 portfolioDescription.forEach((elem) => elem.addEventListener('transitionend', () => {
   const btn = elem.querySelector('.btn');
   if (parseInt(getComputedStyle(elem).opacity) === 1) {
