@@ -17,11 +17,10 @@ const loader = document.querySelector('.loader');
 body.classList.add('loading');
 
 document.addEventListener('DOMContentLoaded', () => {
-  const images = document.querySelectorAll('img'); // Seleciona todas as imagens na página
-  let imagesToLoad = images.length; // Conta o número total de imagens que precisam ser carregadas
+  const images = document.querySelectorAll('img');
+  let imagesToLoad = images.length;
 
-  const checkIfAllImagesLoaded = () => {
-    imagesToLoad -= 1;
+  function check() {
     if (imagesToLoad === 0) {
       loader.style.opacity = '0';
       loader.addEventListener('transitionend', () => {
@@ -30,11 +29,20 @@ document.addEventListener('DOMContentLoaded', () => {
         body.classList.add('loaded');
       });
     }
+  }
+
+  const checkIfAllImagesLoaded = () => {
+    imagesToLoad -= 1;
+    check();
   };
 
   images.forEach((image) => {
-    image.addEventListener('load', checkIfAllImagesLoaded); // Adiciona um ouvinte de eventos para cada imagem carregada
-    image.addEventListener('error', checkIfAllImagesLoaded); // Adiciona um ouvinte de eventos para lidar com erros de carregamento de imagem
+    if (image.complete) {
+      imagesToLoad -= 1;
+    } else {
+      image.addEventListener('load', checkIfAllImagesLoaded);
+    }
+    check();
   });
 });
 
