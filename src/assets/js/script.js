@@ -17,11 +17,24 @@ const loader = document.querySelector('.loader');
 body.classList.add('loading');
 
 document.addEventListener('DOMContentLoaded', () => {
-  loader.style.opacity = '0';
-  loader.addEventListener('transitionend', () => {
-    loader.style.display = 'none';
-    body.classList.remove('loading');
-    body.classList.add('loaded');
+  const images = document.querySelectorAll('img'); // Seleciona todas as imagens na página
+  let imagesToLoad = images.length; // Conta o número total de imagens que precisam ser carregadas
+
+  const checkIfAllImagesLoaded = () => {
+    imagesToLoad -= 1;
+    if (imagesToLoad === 0) {
+      loader.style.opacity = '0';
+      loader.addEventListener('transitionend', () => {
+        loader.style.display = 'none';
+        body.classList.remove('loading');
+        body.classList.add('loaded');
+      });
+    }
+  };
+
+  images.forEach((image) => {
+    image.addEventListener('load', checkIfAllImagesLoaded); // Adiciona um ouvinte de eventos para cada imagem carregada
+    image.addEventListener('error', checkIfAllImagesLoaded); // Adiciona um ouvinte de eventos para lidar com erros de carregamento de imagem
   });
 });
 
