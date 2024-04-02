@@ -7,6 +7,9 @@ import '@mdi/font/css/materialdesignicons.min.css';
 
 import './theme';
 import './activeLinkMenu';
+import portfolio from './portfolioObj';
+
+export const preloadedImages = {};
 
 const testUserAgent = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
   navigator.userAgent,
@@ -44,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   cssLinks.forEach((cssLink) => {
+    // eslint-disable-next-line no-param-reassign
     cssLink.onload = checkCssLoaded();
   });
 
@@ -66,6 +70,21 @@ portfolioDescription.forEach((elem) => elem.addEventListener('transitionend', ()
   }
   btn.style.pointerEvents = 'none';
 }));
+
+function preloadImages() {
+  Object.keys(portfolio).forEach((client) => {
+    preloadedImages[client] = [];
+    for (let i = 1; i <= portfolio[client].images; i += 1) {
+      const paddedIndex = String(i).padStart(2, '0');
+      const img = new Image();
+      img.src = `assets/images/portfolio/${client}/${paddedIndex}.jpg`;
+      preloadedImages[client].push(img);
+    }
+  });
+}
+
+preloadImages();
+console.log(preloadedImages);
 
 // set HR width
 

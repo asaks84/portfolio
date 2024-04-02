@@ -1,6 +1,6 @@
 import { modal } from './modal';
 import portfolio from './portfolioObj';
-import testUserAgent from './script';
+import testUserAgent, { preloadedImages } from './script';
 
 const carouselDiv = modal;
 
@@ -41,15 +41,10 @@ export function shiftSlide(direction) {
 
 // create image slide
 function createSlide(client, image) {
-  const folder = `assets/images/portfolio/${client}`;
   const slideDiv = document.createElement('div');
-  const value = image.toLocaleString('en-US', {
-    minimumIntegerDigits: 2,
-    useGrouping: false,
-  });
-
   setWidth(slideDiv, portfolio[client].images);
-  slideDiv.style.background = `url('${folder}/${value}.jpg') center center/cover`;
+
+  slideDiv.style.background = `url('${preloadedImages[client][image - 1].src}') center center/cover`;
   getCarousel().appendChild(slideDiv);
 }
 
