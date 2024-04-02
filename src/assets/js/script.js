@@ -19,9 +19,11 @@ body.classList.add('loading');
 document.addEventListener('DOMContentLoaded', () => {
   const images = document.querySelectorAll('img');
   let imagesToLoad = images.length;
+  const cssLinks = document.querySelectorAll('link[rel="stylesheet"]');
+  let numCssLoaded = cssLinks.length;
 
   function check() {
-    if (imagesToLoad === 0) {
+    if (imagesToLoad === 0 && numCssLoaded === 0) {
       loader.style.opacity = '0';
       loader.addEventListener('transitionend', () => {
         loader.style.display = 'none';
@@ -31,10 +33,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  function checkCssLoaded() {
+    numCssLoaded -= 1;
+    console.log(numCssLoaded);
+    check();
+  }
   const checkIfAllImagesLoaded = () => {
     imagesToLoad -= 1;
     check();
   };
+
+  cssLinks.forEach((cssLink) => {
+    cssLink.onload = checkCssLoaded();
+  });
 
   images.forEach((image) => {
     if (image.complete) {
@@ -47,10 +58,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 const portfolioDescription = document.querySelectorAll('section div.description');
-console.log(portfolioDescription);
 portfolioDescription.forEach((elem) => elem.addEventListener('transitionend', () => {
   const btn = elem.querySelector('.btn');
-  if (parseInt(getComputedStyle(elem).opacity) === 1) {
+  if (parseInt(getComputedStyle(elem).opacity, 10) === 1) {
     btn.style.pointerEvents = 'all';
     return;
   }
