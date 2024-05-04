@@ -38,7 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function checkCssLoaded() {
     numCssLoaded -= 1;
-    console.log(numCssLoaded);
     check();
   }
   const checkIfAllImagesLoaded = () => {
