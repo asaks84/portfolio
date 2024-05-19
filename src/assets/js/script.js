@@ -60,6 +60,17 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+function calcAge() {
+  const birthDate = new Date('1984-010-06');
+  const today = new Date();
+
+  const diff = today.getTime() - birthDate.getTime();
+  const age = Math.floor(diff / (1000 * 60 * 60 * 24 * 365.25)); // Considerando anos bissextos
+
+  document.getElementById('age').textContent = `${age} anos`;
+}
+calcAge();
+
 const portfolioDescription = document.querySelectorAll('section div.description');
 portfolioDescription.forEach((elem) => elem.addEventListener('transitionend', () => {
   const btn = elem.querySelector('.btn');
