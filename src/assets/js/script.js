@@ -7,7 +7,7 @@ import '@mdi/font/css/materialdesignicons.min.css';
 
 import './theme';
 import './activeLinkMenu';
-import portfolio from './portfolioObj';
+import portfolio from './portfolioObj.json';
 
 export const preloadedImages = {};
 
@@ -94,7 +94,6 @@ function preloadImages() {
 }
 
 preloadImages();
-console.log(preloadedImages);
 
 // set HR width
 
